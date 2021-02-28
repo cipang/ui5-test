@@ -1,7 +1,9 @@
 sap.ui.define([
-  "sap/ui/core/mvc/Controller"
+  "sap/ui/core/mvc/Controller",
+  "sap/m/MessageBox",
+  "sap/m/MessageToast"
   ],
-  function (Controller) {
+  function (Controller, MessageBox, MessageToast) {
       "use strict";
 
       return Controller.extend("sap.btp.sapui5.controller.Detail", {
@@ -28,6 +30,20 @@ sap.ui.define([
           handleNavButtonPress: function (evt) {
               var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
               oRouter.navTo("home");
+          },
+          handleOrder: function (evt) {
+            // show confirmation dialog
+            var bundle = this.getView().getModel("i18n").getResourceBundle();
+            MessageBox.confirm(
+                bundle.getText("OrderDialogMsg"),
+                function (oAction) {
+                    if (MessageBox.Action.OK === oAction) {
+                        var successMsg = bundle.getText("OrderDialogSuccessMsg");
+                        MessageToast.show(successMsg);
+                    }
+                },
+                bundle.getText("OrderDialogTitle")
+            );
           }
       });
   });
