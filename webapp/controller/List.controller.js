@@ -1,7 +1,8 @@
 sap.ui.define([
-    "sap/ui/core/mvc/Controller"
+    "sap/ui/core/mvc/Controller",
+    "sap/ui/model/Sorter"
 ],
-    function (Controller) {
+    function (Controller, Sorter) {
         "use strict";
 
         return Controller.extend("sap.btp.sapui5.controller.List", {
@@ -11,6 +12,12 @@ sap.ui.define([
                 oRouter.navTo("detail", {
                     productId: selectedProductId
                 });
+            },
+
+            handleSort: function (evt) {
+                var aSorters = [];
+                aSorters.push(new Sorter("UnitPrice", true)); // true means descending.
+                this.getView().byId("list").getBinding("items").sort(aSorters);
             }
         });
     });

@@ -1,4 +1,4 @@
-<mvc:View controllerName="sap.btp.sapui5.controller.List" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="sap.btp.sapui5.controller.List" displayBlock="true">
 	<Page id="listPage" title="{i18n>ListTitle}">
 		<List id="list" items="{/Products}">
 			<ObjectListItem type="Navigation" press="handleListItemPress" title="{ProductName}" number="{= ((${UnitPrice} * 100) / 100).toFixed(2) }" numberUnit="{i18n>Currency}">
@@ -10,5 +10,8 @@
 				</firstStatus>
 			</ObjectListItem>
         </List>
+    <headerContent>
+        <Button xmlns="sap.m" text="Sort by Price" id="button2" icon="sap-icon://sort" press="handleSort"/>
+    </headerContent>
     </Page>
 </mvc:View>
