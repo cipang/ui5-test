@@ -3,13 +3,23 @@
 		<App id="app">
 			<pages>
 				<Page id="page" title="{i18n>title}">
-					<content>
-					    <List noDataText="Drop list items here" id="list0" items="{/Arrival}">
-					        <items>
-					            <StandardListItem type="Navigation" title="{flightId}" description="{time} {status}" icon="{logo}" id="item0"/>
-					        </items>
-					    </List>
-					</content>
+                    <content>
+                        <IconTabBar selectedKey="__filter1" id="bar0">
+                            <items>
+                                <IconTabFilter text="Arrival" id="filter0" icon="sap-icon://home">
+                                    <content>
+                                        <List noDataText="No data" id="list0" items="{/Arrival}">
+                                            <items>
+                                                <StandardListItem title="{flightId}" id="item0" description="{time} {status} Passenger: {passengers}" icon="{logo}" press="handleListPress" type="Active"/></items>
+                                        </List>
+                                    </content>
+                                </IconTabFilter>
+                                <IconTabFilter text="Departure" icon="sap-icon://flight" iconColor="Critical" id="filter1">
+                                    <content>
+                                    </content>
+                                </IconTabFilter></items>
+                        </IconTabBar>
+                    </content>
 				</Page>
 			</pages>
 		</App>
