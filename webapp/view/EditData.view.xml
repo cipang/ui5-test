@@ -13,11 +13,25 @@
 
 	                    <sap.ui.layout.form:FormElement label="Status" id="element0">
 
-	                        <sap.ui.layout.form:fields>
+	                    <sap.ui.layout.form:fields>
 
-	                            <Input width="100%" id="input0" value="{status}"/>
+	                        <Select xmlns="sap.m" id="select0" selectedKey="{status}">
 
-	                        </sap.ui.layout.form:fields>
+	                            <items>
+
+	                                <core:Item xmlns:core="sap.ui.core" key="On time" text="On time" id="item0"/>
+
+	                                <core:Item xmlns:core="sap.ui.core" key="Delayed" text="Delayed" id="item1"/>
+
+	                                <sap.ui.core:Item xmlns:sap.ui.core="sap.ui.core" text="Cancelled" id="item2" key="Cancelled"/>
+
+	                                </items>
+
+	                            
+
+	                        </Select>
+
+	                    </sap.ui.layout.form:fields>
 
 	                    </sap.ui.layout.form:FormElement>
 
