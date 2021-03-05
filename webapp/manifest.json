@@ -86,9 +86,14 @@
       },
       "routes": [
         {
-          "name": "RouteView1",
-          "pattern": "RouteView1",
+          "name": "Home",
+          "pattern": "",
           "target": ["TargetView1"]
+        },
+        {
+          "name": "EditData",
+          "pattern": "edit/{index}",
+          "target": ["TargetEditData"]
         }
       ],
       "targets": {
@@ -96,8 +101,13 @@
           "viewType": "XML",
           "transition": "slide",
           "clearControlAggregation": false,
-          "viewId": "View1",
           "viewName": "View1"
+        },
+        "TargetEditData": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewName": "EditData"
         }
       }
     }

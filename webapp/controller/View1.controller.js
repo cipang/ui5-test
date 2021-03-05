@@ -13,11 +13,16 @@ sap.ui.define([
             },
             
             handleListPress: function (evt) {
-                var list = evt.getSource().getParent();
-                var flight = evt.getSource().getBindingContext().getObject();
-                debugger;
-                flight.passengers += 10;
-                list.getModel().refresh(true);
+                // var list = evt.getSource().getParent();
+                // var flight = evt.getSource().getBindingContext().getObject();
+                // debugger;
+                // flight.passengers += 10;
+                // list.getModel().refresh(true);
+                var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+                var oList = evt.getSource().getParent();
+                var selected = oList.indexOfItem(evt.getSource());
+                console.log(selected);
+                oRouter.navTo("EditData", { index: selected });
             }
 		});
 	});
