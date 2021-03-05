@@ -19,10 +19,10 @@ sap.ui.define([
                 // flight.passengers += 10;
                 // list.getModel().refresh(true);
                 var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-                var oList = evt.getSource().getParent();
-                var selected = oList.indexOfItem(evt.getSource());
-                console.log(selected);
-                oRouter.navTo("EditData", { index: selected });
+                var selected = evt.getSource().getBindingContext().getPath();
+                var s = selected.split("/");
+                console.log(s)
+                oRouter.navTo("EditData", { type: s[1], index: s[2] });
             }
 		});
 	});

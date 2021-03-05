@@ -92,7 +92,7 @@
         },
         {
           "name": "EditData",
-          "pattern": "edit/{index}",
+          "pattern": "edit/{type}/{index}",
           "target": ["TargetEditData"]
         }
       ],

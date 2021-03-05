@@ -12,7 +12,7 @@ sap.ui.define([
             _onRouteMatched: function (oEvent) {
                 var oArgs = oEvent.getParameter("arguments");
                 console.log(oArgs);
-                this.getView().bindElement("/Arrival/" + oArgs.index);
+                this.getView().bindElement("/" + oArgs.type + "/" + oArgs.index);
             },
             handleNavButtonPress: function (evt) {
                 var oRouter = sap.ui.core.UIComponent.getRouterFor(this);

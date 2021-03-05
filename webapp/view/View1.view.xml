@@ -16,6 +16,10 @@
                                 </IconTabFilter>
                                 <IconTabFilter text="Departure" icon="sap-icon://flight" iconColor="Critical" id="filter1">
                                     <content>
+                                        <List noDataText="No data" id="list1" items="{/Departure}">
+                                            <items>
+                                                <StandardListItem title="{flightId}" id="item1" description="{time} {status} Passenger: {passengers}" icon="{logo}" press="handleListPress" type="Active"/></items>
+                                        </List>
                                     </content>
                                 </IconTabFilter></items>
                         </IconTabBar>
